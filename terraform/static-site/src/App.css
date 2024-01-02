@@ -16,12 +16,13 @@
 h1 {
   color: #2c3e50;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 1.5em; /* Smaller font size for mobile */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 20px auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -40,17 +41,57 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+/* Make table scrollable on small screens */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /* Label the data */
+  td:nth-of-type(1):before { content: "Exercise"; }
+  td:nth-of-type(2):before { content: "Total Completed"; }
+  td:nth-of-type(3):before { content: "Percent Complete"; }
+  td:nth-of-type(4):before { content: "Ahead of Schedule"; }
+  td:nth-of-type(5):before { content: "Yearly Goal"; }
+}
+
 .chart-container {
   margin: 20px;
   padding: 20px;
   border-radius: 8px;
   background-color: #f8f8f8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Allow horizontal scrolling for the chart */
 }
 
+/* Responsive font sizes */
 @media (max-width: 600px) {
-  .chart-container {
-    width: 100%;
-    overflow-x: scroll;
-  }
+  h1 { font-size: 1.2em; }
 }

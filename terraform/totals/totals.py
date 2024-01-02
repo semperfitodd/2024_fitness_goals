@@ -33,6 +33,7 @@ def lambda_handler(event, context):
             totals = {exercise: 0 for exercise in exercise_types}
             days_data = {}
             daily_counts = {exercise: [] for exercise in exercise_types}  # Initialize daily counts
+            cumulative_counts = {exercise: 0 for exercise in exercise_types}  # Initialize cumulative counts
 
             for item in items:
                 exercise = item['ExerciseType']
@@ -43,10 +44,11 @@ def lambda_handler(event, context):
                     days_data[date] = {ex: 0 for ex in exercise_types}
                 days_data[date][exercise] += count
 
-            # Sort days and populate daily counts
+            # Populate daily counts and calculate cumulative counts
             for date in sorted(days_data.keys()):
                 for exercise in exercise_types:
-                    daily_counts[exercise].append(days_data[date].get(exercise, 0))  # Append count or 0 if no data
+                    cumulative_counts[exercise] += days_data[date].get(exercise, 0)
+                    daily_counts[exercise].append(cumulative_counts[exercise])
 
             # Calculate days missed
             days_missed = {
@@ -54,9 +56,6 @@ def lambda_handler(event, context):
                 for exercise in exercise_types}
 
             return totals, days_missed, daily_counts
-        except ClientError as e:
-            print(e.response['Error']['Message'])
-            return {}, {}, {}
         except ClientError as e:
             print(e.response['Error']['Message'])
             return {}, {}, {}

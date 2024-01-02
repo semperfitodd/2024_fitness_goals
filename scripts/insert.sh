@@ -1,35 +1,37 @@
-import boto3
-import os
-from botocore.exceptions import ClientError
+#!/bin/bash
 
-def lambda_handler(event, context):
-    # Get DynamoDB table name from environment variable
-    table_name = os.environ['DYNAMO_TABLE']
+# Table name
+TABLE_NAME="2024_fitness_daily"
 
-    # Initialize a DynamoDB client
-    dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table(table_name)
+# Get the current date in YYYY-MM-DD format
+TODAY=$(date +%F)
 
-    # Define the exercise types
-    exercise_types = ["Pullup", "Pushup", "Squat"]
+# AWS Region being used
+AWS_REGION=us-east-1
 
-    # Function to scan the table and sum the counts for an exercise type
-    def sum_counts(exercise_type):
-        try:
-            response = table.scan(
-                FilterExpression=boto3.dynamodb.conditions.Attr('ExerciseType').eq(exercise_type)
-            )
-            items = response.get('Items', [])
-            total = sum(int(item['Count']) for item in items)
-            return total
-        except ClientError as e:
-            print(e.response['Error']['Message'])
-            return 0
+# Ask user for the number of pullups, pushups, and squats
+read -p "Enter number of pullups: " pullups
+read -p "Enter number of pushups: " pushups
+read -p "Enter number of squats: " squats
 
-    # Sum the totals for each exercise type
-    totals = {exercise: sum_counts(exercise) for exercise in exercise_types}
+# Function to insert an item into the DynamoDB table
+insert_exercise() {
+    local exercise_type=$1
+    local count=$2
 
-    return {
-        'statusCode': 200,
-        'body': totals
-    }
+    aws dynamodb put-item \
+        --table-name "$TABLE_NAME" \
+        --region $AWS_REGION \
+        --item '{
+            "Date": {"S": "'"$TODAY"'"},
+            "ExerciseType": {"S": "'"$exercise_type"'"},
+            "Count": {"N": "'"$count"'"}
+        }'
+}
+
+# Insert data into DynamoDB
+insert_exercise "Pullup" $pullups
+insert_exercise "Pushup" $pushups
+insert_exercise "Squat" $squats
+
+echo "Data inserted into DynamoDB for $TODAY"

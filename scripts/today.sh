@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Table name
-TABLE_NAME="2024_fitness"
+TABLE_NAME="2024_fitness_daily"
 
 # Get the current date in YYYY-MM-DD format
 TODAY=$(date +%F)
