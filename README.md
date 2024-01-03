@@ -58,10 +58,13 @@ Node.js and npm for running the React application.
 ### 4. Insert and View Data
 
 * Use **insert.sh** to add new records.
+
   ![insert.png](images%2Finsert.png)
 * Use **today.sh** to view today's progress.
+
   ![today.png](images%2Ftoday.png)
 ## Usage
 * **Recording Activities:** Run scripts/insert.sh and follow the prompts to enter your daily activity count.
 * **Viewing Progress:** Access the React frontend through the CloudFront URL.
+
   ![website.png](images%2Fwebsite.png)
