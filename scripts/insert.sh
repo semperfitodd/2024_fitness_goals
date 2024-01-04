@@ -4,10 +4,14 @@
 TABLE_NAME="2024_fitness_daily"
 
 # Get the current date in YYYY-MM-DD format
-TODAY=$(date +%F)
+DEFAULT_DATE=$(date +%F)
 
 # AWS Region being used
 AWS_REGION=us-east-1
+
+# Ask user for the date or use today's date by default
+read -p "Enter date (YYYY-MM-DD) or press Enter for today's date [$DEFAULT_DATE]: " input_date
+TODAY=${input_date:-$DEFAULT_DATE}
 
 # Ask user for the number of pullups, pushups, and squats
 read -p "Enter number of pullups: " pullups
