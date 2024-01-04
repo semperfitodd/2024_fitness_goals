@@ -80,6 +80,7 @@ tr:nth-child(even) {
   td:nth-of-type(3):before { content: "Percent Complete"; }
   td:nth-of-type(4):before { content: "Ahead of Schedule"; }
   td:nth-of-type(5):before { content: "Yearly Goal"; }
+  td:nth-of-type(6):before { content: "Days Missed"; }
 }
 
 .chart-container {

@@ -51,27 +51,29 @@ function App() {
     if (!data || !data.Exercises) return <p>No data available.</p>;
 
     const exercises = Object.entries(data.Exercises).map(([exercise, details]) => (
-      <tr key={exercise}>
-        <td><b>{exercise}</b></td>
-        <td>{details.Total}</td>
-        <td>{details['Percent Exercise Complete']}%</td>
-        <td>{(details['Ahead of Schedule']).toFixed(2)}%</td>
-        <td>{details['Yearly Goal']}</td>
-      </tr>
+        <tr key={exercise}>
+          <td><b>{exercise}</b></td>
+          <td>{details.Total}</td>
+          <td>{details['Percent Exercise Complete']}%</td>
+          <td>{(details['Ahead of Schedule']).toFixed(2)}%</td>
+          <td>{details['Yearly Goal']}</td>
+          <td>{details['Days Missed']}</td>
+        </tr>
     ));
 
     return (
-      <table>
+        <table>
         <thead>
-          <tr>
-            <th>Exercise</th>
-            <th>Total Completed</th>
-            <th>Percent Complete</th>
-            <th>Ahead of Schedule</th>
-            <th>Yearly Goal</th>
-          </tr>
+        <tr>
+          <th>Exercise</th>
+          <th>Total Completed</th>
+          <th>Percent Complete</th>
+          <th>Ahead of Schedule</th>
+          <th>Yearly Goal</th>
+          <th>Days Missed</th>
+        </tr>
         </thead>
-        <tbody>
+          <tbody>
           {exercises}
         </tbody>
       </table>
