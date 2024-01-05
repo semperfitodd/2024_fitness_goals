@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import InsertForm from './InsertForm';
+import { initializeAnalytics } from './GoogleAnalytics'; // Import the function
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import './App.css';
@@ -31,20 +33,24 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(API_URL);
-        setData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // Define fetchData function
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get(API_URL);
+      setData(response.data);
+      setError(null);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
+    initializeAnalytics();
   }, []);
 
   const renderTable = () => {
@@ -112,6 +118,7 @@ function App() {
         <p>Percent Year Complete: {data?.['Percent Year Complete']}%</p>
         {isLoading ? <p>Loading...</p> : error ? <p>Error fetching data.</p> : renderTable()}
         {isLoading ? <p>Loading graph...</p> : error ? <p>Error fetching data for graph.</p> : renderLineGraph()}
+        <InsertForm onSuccessfulInsert={fetchData} />
       </header>
     </div>
   );

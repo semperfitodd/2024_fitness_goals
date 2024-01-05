@@ -16,9 +16,17 @@ module "api_gateway" {
 
   default_stage_access_log_destination_arn = aws_cloudwatch_log_group.api_gw.arn
 
+  default_route_settings = {
+    throttling_burst_limit = 10
+    throttling_rate_limit  = 20
+  }
+
   integrations = {
     "GET /totals" = {
       lambda_arn = module.lambda_function_totals.lambda_function_invoke_arn
+    }
+    "POST /insert" = {
+      lambda_arn = module.lambda_function_insert.lambda_function_invoke_arn
     }
   }
 

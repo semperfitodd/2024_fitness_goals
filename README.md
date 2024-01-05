@@ -10,16 +10,19 @@ The system architecture is built using Terraform for infrastructure provisioning
 ## Repository Structure
 2024_fitness_goals
 ```bash
+2024_fitness_goals
 ├── scripts
-│   ├── insert.sh        # Shell script to insert records locally
 │   └── today.sh         # Shell script to view today's records
-└── terraform
-    ├── *.tf             # Terraform configuration files
-    └── static-site
-        ├── *            # React application files
-    └── totals
-        ├── requirements.txt
-        └── totals.py    # Python script for Lambda function
+├── terraform
+│   ├── *.tf             # Terraform configuration files
+│   └── static-site
+│       ├── src
+│       │   ├── InsertForm.js  # New React component for inserting records
+│       │   └── ...            # Other React application files
+│       └── ...
+└── totals
+    ├── requirements.txt
+    └── totals.py    # Python script for Lambda function
 ```
 ## Features
 **Daily Tracking:** Ability to track daily pull-ups, push-ups, and squats.
@@ -57,14 +60,7 @@ Node.js and npm for running the React application.
 * Deploy the build to S3 (configured via Terraform).
 ### 4. Insert and View Data
 
-* Use **insert.sh** to add new records.
-
-  ![insert.png](images%2Finsert.png)
-* Use **today.sh** to view today's progress.
-
-  ![today.png](images%2Ftoday.png)
-## Usage
-* **Recording Activities:** Run scripts/insert.sh and follow the prompts to enter your daily activity count.
-* **Viewing Progress:** Access the React frontend through the CloudFront URL.
+Use the insert feature at the bottom of the application
+![insert.png](images%2Finsert.png)
 
   ![website.png](images%2Fwebsite.png)
