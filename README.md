@@ -17,18 +17,40 @@ AWS S3 and CloudFront, with a backend API built using AWS Lambda and API Gateway
 
 ```bash
 2024_fitness_goals
+├── README.md
+├── images
+│   ├── 2024_fitness_goals_architecture.png
+│   ├── insert.png
+│   ├── today.png
+│   └── website.png
 ├── scripts
-│   └── today.sh         # Shell script to view today's records
-├── terraform
-│   ├── *.tf             # Terraform configuration files
-│   └── static-site
-│       ├── src
-│       │   ├── InsertForm.js  # New React component for inserting records
-│       │   └── ...            # Other React application files
-│       └── ...
-└── totals
-    ├── requirements.txt
-    └── totals.py    # Python script for Lambda function
+│   ├── insert.sh
+│   └── today.sh
+└── terraform
+    ├── api_gw.tf
+    ├── backend.tf
+    ├── cloudfront.tf
+    ├── data.tf
+    ├── dynamo.tf
+    ├── insert
+    │   └── insert.py
+    ├── lambda.tf
+    ├── plan.out
+    ├── r53.tf
+    ├── s3.tf
+    ├── static-site
+    │   ├── README.md
+    │   ├── build
+    │   ├── node_modules
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   ├── public
+    │   └── src
+    ├── totals
+    │   ├── requirements.txt
+    │   └── totals.py
+    ├── variables.tf
+    └── versions.tf
 ```
 
 ## Features
