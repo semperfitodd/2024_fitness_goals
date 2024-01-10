@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "fitness_site" {
 locals {
   environment = "2024_fitness"
 
-  fitness_site_domain = "${replace(local.environment, "_", "")}.${var.domain}"
+  fitness_site_domain = "fitness.${var.domain}"
 
   site_directory = "${path.module}/static-site/build"
 
