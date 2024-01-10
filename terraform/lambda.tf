@@ -11,8 +11,8 @@ module "lambda_function_totals" {
   environment_variables = {
     DYNAMO_TABLE      = module.dynamo_daily.dynamodb_table_id
     EXERCISE_TYPES    = "Pullup,Pushup,Squat,HSPU"
-    HSPU_DAILY_GOAL = "3"
-    HSPU_YEAR_GOAL = "1200"
+    HSPU_DAILY_GOAL   = "3"
+    HSPU_YEAR_GOAL    = "1200"
     PULLUP_DAILY_GOAL = "70"
     PULLUP_YEAR_GOAL  = "25000"
     PUSHUP_DAILY_GOAL = "140"
@@ -63,7 +63,7 @@ module "lambda_function_insert" {
   timeout       = 30
 
   environment_variables = {
-    DYNAMO_TABLE      = module.dynamo_daily.dynamodb_table_id
+    DYNAMO_TABLE = module.dynamo_daily.dynamodb_table_id
   }
 
   source_path = [

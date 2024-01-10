@@ -10,7 +10,7 @@ module "dynamo_daily" {
   range_key   = "ExerciseType"
   table_class = "STANDARD"
 
-  ttl_enabled        = false
+  ttl_enabled = false
 
   attributes = [{
     name = "Date"

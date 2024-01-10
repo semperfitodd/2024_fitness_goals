@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 const API_ENDPOINT = '/insert';
 
-const InsertForm = ({ onSuccessfulInsert }) => {
+const InsertForm = ({onSuccessfulInsert}) => {
     const [exerciseData, setExerciseData] = useState({
         date: '',
         pullups: 0,
@@ -22,7 +22,7 @@ const InsertForm = ({ onSuccessfulInsert }) => {
     }, []);
 
     const handleInputChange = (e) => {
-        setExerciseData({ ...exerciseData, [e.target.name]: e.target.value });
+        setExerciseData({...exerciseData, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = async (e) => {
@@ -50,11 +50,16 @@ const InsertForm = ({ onSuccessfulInsert }) => {
         <div className="insert-form">
             <h3>Insert New Records</h3>
             <form onSubmit={handleSubmit}>
-                <label><span>Date:</span><input type="date" name="date" value={exerciseData.date} onChange={handleInputChange} /></label>
-                <label><span>Pull-ups:</span><input type="number" name="pullups" value={exerciseData.pullups} onChange={handleInputChange} /></label>
-                <label><span>Push-ups:</span><input type="number" name="pushups" value={exerciseData.pushups} onChange={handleInputChange} /></label>
-                <label><span>Squats:</span><input type="number" name="squats" value={exerciseData.squats} onChange={handleInputChange} /></label>
-                <label><span>HSPU:</span><input type="number" name="hspu" value={exerciseData.hspu} onChange={handleInputChange} /></label> {/* New input field for HSPU */}
+                <label><span>Date:</span><input type="date" name="date" value={exerciseData.date}
+                                                onChange={handleInputChange}/></label>
+                <label><span>Pull-ups:</span><input type="number" name="pullups" value={exerciseData.pullups}
+                                                    onChange={handleInputChange}/></label>
+                <label><span>Push-ups:</span><input type="number" name="pushups" value={exerciseData.pushups}
+                                                    onChange={handleInputChange}/></label>
+                <label><span>Squats:</span><input type="number" name="squats" value={exerciseData.squats}
+                                                  onChange={handleInputChange}/></label>
+                <label><span>HSPU:</span><input type="number" name="hspu" value={exerciseData.hspu}
+                                                onChange={handleInputChange}/></label> {/* New input field for HSPU */}
                 <button type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
