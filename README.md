@@ -1,6 +1,6 @@
 # 2024 Fitness Goals Tracker
 ## Overview
-The 2024 Fitness Goals Tracker is a personal project to track my fitness goals for the year 2024, which include completing 25,000 pullups, 50,000 pushups, and 40,000 squats without missing a day. This repository contains all the necessary code and infrastructure setup for tracking these fitness activities.
+The 2024 Fitness Goals Tracker is a personal project to track my fitness goals for the year 2024, which include completing 25,000 pullups, 50,000 pushups, 40,000 squats, and 1,200 HSPU without missing a day. This repository contains all the necessary code and infrastructure setup for tracking these fitness activities.
 
 The system architecture is built using Terraform for infrastructure provisioning. It includes a React frontend hosted on AWS S3 and CloudFront, with a backend API built using AWS Lambda and API Gateway, interfacing with a DynamoDB database.
 ![2024_fitness_goals_architecture.png](images%2F2024_fitness_goals_architecture.png)

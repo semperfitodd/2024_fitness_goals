@@ -6,6 +6,7 @@ from botocore.exceptions import ClientError
 from calendar import isleap
 from datetime import datetime
 
+
 def lambda_handler(event, context):
     # Environment variables
     table_name = os.environ['DYNAMO_TABLE']

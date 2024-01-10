@@ -8,7 +8,8 @@ const InsertForm = ({ onSuccessfulInsert }) => {
         date: '',
         pullups: 0,
         pushups: 0,
-        squats: 0
+        squats: 0,
+        hspu: 0
     });
     const [successMessage, setSuccessMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false); // Track submission status
@@ -25,42 +26,42 @@ const InsertForm = ({ onSuccessfulInsert }) => {
     };
 
     const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true); // Set submitting status to true
-    try {
-        const response = await axios.post(API_ENDPOINT, exerciseData);
+        e.preventDefault();
+        setIsSubmitting(true); // Set submitting status to true
+        try {
+            const response = await axios.post(API_ENDPOINT, exerciseData);
 
-        if (response.status === 200) {
-            setSuccessMessage('Record successfully inserted!');
-            if (typeof onSuccessfulInsert === 'function') {
-                onSuccessfulInsert();
+            if (response.status === 200) {
+                setSuccessMessage('Record successfully inserted!');
+                if (typeof onSuccessfulInsert === 'function') {
+                    onSuccessfulInsert();
+                }
+            } else {
+                setSuccessMessage('Failed to insert record.');
             }
-        } else {
+        } catch (error) {
+            console.error('Error submitting data:', error);
             setSuccessMessage('Failed to insert record.');
         }
-    } catch (error) {
-        console.error('Error submitting data:', error);
-        setSuccessMessage('Failed to insert record.');
-    }
-    setIsSubmitting(false); // Reset submitting status
-};
-
+        setIsSubmitting(false); // Reset submitting status
+    };
 
     return (
-    <div className="insert-form">
-        <h3>Insert New Records</h3>
-        <form onSubmit={handleSubmit}>
-            <label><span>Date:</span><input type="date" name="date" value={exerciseData.date} onChange={handleInputChange} /></label>
-            <label><span>Pull-ups:</span><input type="number" name="pullups" value={exerciseData.pullups} onChange={handleInputChange} /></label>
-            <label><span>Push-ups:</span><input type="number" name="pushups" value={exerciseData.pushups} onChange={handleInputChange} /></label>
-            <label><span>Squats:</span><input type="number" name="squats" value={exerciseData.squats} onChange={handleInputChange} /></label>
-            <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-            </button>
-        </form>
-        {successMessage && <p>{successMessage}</p>}
-    </div>
-);
+        <div className="insert-form">
+            <h3>Insert New Records</h3>
+            <form onSubmit={handleSubmit}>
+                <label><span>Date:</span><input type="date" name="date" value={exerciseData.date} onChange={handleInputChange} /></label>
+                <label><span>Pull-ups:</span><input type="number" name="pullups" value={exerciseData.pullups} onChange={handleInputChange} /></label>
+                <label><span>Push-ups:</span><input type="number" name="pushups" value={exerciseData.pushups} onChange={handleInputChange} /></label>
+                <label><span>Squats:</span><input type="number" name="squats" value={exerciseData.squats} onChange={handleInputChange} /></label>
+                <label><span>HSPU:</span><input type="number" name="hspu" value={exerciseData.hspu} onChange={handleInputChange} /></label> {/* New input field for HSPU */}
+                <button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+            </form>
+            {successMessage && <p>{successMessage}</p>}
+        </div>
+    );
 };
 
 function getCurrentLocalDate() {

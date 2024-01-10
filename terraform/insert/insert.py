@@ -16,6 +16,7 @@ def lambda_handler(event, context):
         pullups = int(data['pullups'])
         pushups = int(data['pushups'])
         squats = int(data['squats'])
+        hspu = int(data['hspu'])
     except (ValueError, KeyError) as error:
         return respond_with_error(400, "Invalid data")
 
@@ -39,7 +40,8 @@ def lambda_handler(event, context):
     success = all([
         insert_exercise("Pullup", pullups),
         insert_exercise("Pushup", pushups),
-        insert_exercise("Squat", squats)
+        insert_exercise("Squat", squats),
+        insert_exercise("HSPU", hspu)
     ])
 
     if success:

@@ -56,35 +56,44 @@ function App() {
   const renderTable = () => {
     if (!data || !data.Exercises) return <p>No data available.</p>;
 
-    const exercises = Object.entries(data.Exercises).map(([exercise, details]) => (
-        <tr key={exercise}>
-          <td><b>{exercise}</b></td>
-          <td>{details.Total}</td>
-          <td>{details['Percent Exercise Complete']}%</td>
-          <td>{(details['Ahead of Schedule']).toFixed(2)}%</td>
-          <td>{details['Yearly Goal']}</td>
-          <td>{details['Days Missed']}</td>
-        </tr>
-    ));
+    const exercises = Object.entries(data.Exercises).map(([exercise, details]) => {
+        const completedSinceStart = {
+            'Pullup': 25177 + details.Total, // 2023 value for pullups
+            'Pushup': 50354 + details.Total, // 2023 value for pushups
+            'Squat': 'N/A',                  // Placeholder for squats
+            'HSPU': 'N/A'                    // Placeholder for HSPU
+        };
+
+        return (
+            <tr key={exercise}>
+                <td><b>{exercise}</b></td>
+                <td>{details.Total}</td>
+                <td>{details['Percent Exercise Complete']}%</td>
+                <td>{details['Yearly Goal']}</td>
+                <td>{details['Days Missed']}</td>
+                <td>{completedSinceStart[exercise]}</td>
+            </tr>
+        );
+    });
 
     return (
         <table>
-        <thead>
-        <tr>
-          <th>Exercise</th>
-          <th>Total Completed</th>
-          <th>Percent Complete</th>
-          <th>Ahead of Schedule</th>
-          <th>Yearly Goal</th>
-          <th>Days Missed</th>
-        </tr>
-        </thead>
-          <tbody>
-          {exercises}
-        </tbody>
-      </table>
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Total Completed</th>
+                    <th>Percent Complete</th>
+                    <th>Yearly Goal</th>
+                    <th>Days Missed</th>
+                    <th>Completed since 20230101</th>
+                </tr>
+            </thead>
+            <tbody>
+                {exercises}
+            </tbody>
+        </table>
     );
-  };
+};
 
   const renderLineGraph = () => {
     if (!data || !data.Exercises) return <p>No graph data available.</p>;
