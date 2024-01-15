@@ -21,6 +21,7 @@ def lambda_handler(event, context):
     current_year = current_time_eastern.year
     year_days = 366 if isleap(current_year) else 365
     current_day_of_year = current_time_eastern.timetuple().tm_yday
+    current_date = current_time_eastern.strftime('%Y-%m-%d')
     percent_year_complete = round(current_day_of_year / year_days * 100, 2)
 
     # Initialize DynamoDB client
@@ -54,8 +55,12 @@ def lambda_handler(event, context):
 
             # Calculate days missed
             days_missed = {
-                exercise: sum(1 for counts in days_data.values() if counts.get(exercise, 0) < daily_goals[exercise])
-                for exercise in exercise_types}
+                exercise: sum(
+                    1 for date, counts in days_data.items()
+                    if counts.get(exercise, 0) < daily_goals[exercise] and date != current_date
+                )
+                for exercise in exercise_types
+            }
 
             return totals, days_missed, daily_counts
         except ClientError as e:
