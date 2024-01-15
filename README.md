@@ -2,7 +2,7 @@
 
 ## Overview
 
-The 2024 Fitness Goals Tracker is a personal project to track my fitness goals for the year 2024, which include
+The 2024 Fitness Goals Tracker is a personal project designed to track fitness activities throughout the year. It now includes Firebase authentication to secure the insert feature, ensuring that data entry is restricted to authorized users only. The goals include
 completing 25,000 pullups, 50,000 pushups, 40,000 squats, and 1,200 HSPU without missing a day. This repository contains
 all the necessary code and infrastructure setup for tracking these fitness activities.
 
@@ -10,6 +10,12 @@ The system architecture is built using Terraform for infrastructure provisioning
 AWS S3 and CloudFront, with a backend API built using AWS Lambda and API Gateway, interfacing with a DynamoDB database.
 ![2024_fitness_goals_architecture.png](images%2F2024_fitness_goals_architecture.png)
 **Flow:** User (me) > CloudFront/S3 > API Gateway > Lambda > DynamoDB > back to me
+
+## Features
+* **Daily Tracking:** Track daily pull-ups, push-ups, squats, and HSPU.
+* **React Frontend:** User-friendly interface with secured access via Firebase authentication.
+* **Data Persistence:** Uses DynamoDB for storing records.
+* **Automated Infrastructure:** Provisioned using Terraform.
 
 ## Repository Structure
 
@@ -53,22 +59,12 @@ AWS S3 and CloudFront, with a backend API built using AWS Lambda and API Gateway
     └── versions.tf
 ```
 
-## Features
-
-**Daily Tracking:** Ability to track daily pull-ups, push-ups, and squats.
-
-**React Frontend:** A user-friendly interface to display progress.
-
-**Data Persistence:** Using DynamoDB to store daily records.
-
-**Automated Infrastructure:** Entire setup provisioned using Terraform.
-
 ## Setup and Installation
 
-Prerequisites
-AWS CLI configured with appropriate permissions.
-Terraform installed.
-Node.js and npm for running the React application.
+### Prerequisites
+* AWS CLI configured with appropriate permissions.
+* Terraform installed.
+* Node.js and npm for running the React application.
 
 ## Step-by-Step Guide
 
@@ -83,7 +79,22 @@ Node.js and npm for running the React application.
     terraform init
     terraform apply
 
-### 3. Deploy React Frontend
+### 3. Configuring Firebase Authentication
+* Navigate to Firebase Console and create a new project.
+* Obtain your Firebase configuration and add it to your environment variables.
+* Integrate Firebase authentication in your React application as shown in the App.js code snippet.
+  ```javascript
+  // Firebase configuration in firebaseConfig.js
+  const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      // ...other config
+  };
+  ```
+* Ensure the Firebase project is configured with your domain.
+* User access can be controlled through Firebase console.
+
+### 4. Deploy React Frontend
 
 * Navigate to the static-site directory.
 * Install dependencies and build the project.
@@ -94,7 +105,7 @@ Node.js and npm for running the React application.
     ```
 * Deploy the build to S3 (configured via Terraform).
 
-### 4. Insert and View Data
+### 5. Insert and View Data
 
 Use the insert feature at the bottom of the application
 ![insert.png](images%2Finsert.png)
