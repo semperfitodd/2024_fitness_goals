@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import firebaseConfig from './firebaseConfig';
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import InsertForm from './InsertForm';
-import {initializeAnalytics} from './GoogleAnalytics'; // Import the function
 import axios from 'axios';
 import {Line} from 'react-chartjs-2';
 import './App.css';
-
 import {
     CategoryScale,
     Chart as ChartJS,
@@ -15,6 +16,10 @@ import {
     Title,
     Tooltip,
 } from 'chart.js';
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 ChartJS.register(
     CategoryScale,
@@ -32,8 +37,8 @@ function App() {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [user, setUser] = useState(null);
 
-    // Define fetchData function
     const fetchData = async () => {
         setIsLoading(true);
         try {
@@ -49,9 +54,27 @@ function App() {
     };
 
     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user && user.email === 'todd@bernsonfamily.com') {
+                setUser(user);
+            } else {
+                setUser(null);
+            }
+        });
+
         fetchData();
-        initializeAnalytics();
+
+        return () => unsubscribe();
     }, []);
+
+    const signInWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider);
+    };
+
+    const handleSignOut = () => {
+        signOut(auth);
+    };
 
     const renderTable = () => {
         if (!data || !data.Exercises) return <p>No data available.</p>;
@@ -60,8 +83,8 @@ function App() {
             const completedSinceStart = {
                 'Pullup': 25177 + details.Total, // 2023 value for pullups
                 'Pushup': 50354 + details.Total, // 2023 value for pushups
-                'Squat': 'N/A',                  // Placeholder for squats
-                'HSPU': 'N/A'                    // Placeholder for HSPU
+                'Squat': 'N/A', // Placeholder for squats
+                'HSPU': 'N/A' // Placeholder for HSPU
             };
 
             return (
@@ -128,7 +151,14 @@ function App() {
                 {isLoading ? <p>Loading...</p> : error ? <p>Error fetching data.</p> : renderTable()}
                 {isLoading ? <p>Loading graph...</p> : error ?
                     <p>Error fetching data for graph.</p> : renderLineGraph()}
-                <InsertForm onSuccessfulInsert={fetchData}/>
+                {user ? (
+                    <>
+                        <InsertForm onSuccessfulInsert={fetchData}/>
+                        <button onClick={handleSignOut}>Sign out</button>
+                    </>
+                ) : (
+                    <button onClick={signInWithGoogle}>Sign in with Google</button>
+                )}
             </header>
         </div>
     );
