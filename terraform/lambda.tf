@@ -12,7 +12,7 @@ module "lambda_function_totals" {
     DYNAMO_TABLE      = module.dynamo_daily.dynamodb_table_id
     EXERCISE_TYPES    = "Pullup,Pushup,Squat,HSPU"
     HSPU_DAILY_GOAL   = "3"
-    HSPU_YEAR_GOAL    = "1200"
+    HSPU_YEAR_GOAL    = "1500"
     PULLUP_DAILY_GOAL = "70"
     PULLUP_YEAR_GOAL  = "25000"
     PUSHUP_DAILY_GOAL = "140"
