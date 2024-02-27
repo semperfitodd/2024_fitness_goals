@@ -104,11 +104,11 @@ function App() {
                 <thead>
                 <tr>
                     <th>Exercise</th>
-                    <th>Total Completed</th>
-                    <th>Percent Complete</th>
-                    <th>Yearly Goal</th>
+                    <th>2024 Total</th>
+                    <th>2024 % Complete</th>
+                    <th>2024 Goal</th>
                     <th>Days Missed</th>
-                    <th>Completed since 20230101</th>
+                    <th>Completed since Jan 1, 2023</th>
                 </tr>
                 </thead>
                 <tbody>
