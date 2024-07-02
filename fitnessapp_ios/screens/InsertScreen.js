@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, Alert, TouchableWithoutFeedback, Keyboar
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useNavigation } from '@react-navigation/native';
-import styles from './styles'; // Import styles from styles.js
+import styles from '../styles'; // Import styles from styles.js
 
 const API_ENDPOINT = 'https://fitness.bernsonfamily.net/insert';
 
