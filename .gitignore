@@ -37,14 +37,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Dependency directories
-node_modules/
+**/node_modules/*
 jspm_packages/
 
 # Testing
 coverage/
-
-# Production
-build/
 
 # Miscellaneous
 .env
@@ -53,61 +50,16 @@ build/
 .env.test.local
 .env.production.local
 
-# React Native specific
 # Android
-android/.gradle
-android/app/build
-android/.idea
-android/.vscode
-android/local.properties
-android/.gradle
-android/app/src/main/assets/index.android.bundle
-android/app/src/**/*.map
-android/app/src/debug
-android/app/src/androidTest
-android/app/src/test
-android/app/src/androidTestDebug
-android/app/src/androidTestRelease
-android/app/src/testDebug
-android/app/src/testRelease
-android/app/debug.keystore
-android/app/app.iml
-android/app/proguard-rules.pro
-android/app/libs
-android/gradle.properties
-android/gradlew
-android/gradlew.bat
-android/settings.gradle
+**/android/*
 
 # iOS
-ios/Pods/
-ios/build/
-ios/DerivedData/
-ios/.vscode
-ios/fitnessapp_ios.xcworkspace/xcuserdata
-ios/fitnessapp_ios.xcworkspace/xcshareddata
-ios/fitnessapp_ios.xcworkspace/xcuserdata/
-ios/fitnessapp_ios.xcodeproj/project.xcworkspace
-ios/fitnessapp_ios.xcodeproj/xcuserdata
-ios/fitnessapp_ios.xcodeproj/xcshareddata
-ios/fitnessapp_ios.xcodeproj/xcuserdata/
-ios/.xcode.env
+**/ios/*
 
 # Fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
-
-# Buck
-buck-out/
-\.buckd/
-*.keystore
-
-# CocoaPods
-ios/Pods/
-ios/.symlinks/
-ios/Podfile.lock
-ios/.xcode.env
 
 # Package files
 *.jar
@@ -133,45 +85,9 @@ metro.config.js
 *.bundle/
 
 # Specific files and directories to exclude
-fitnessapp_ios/.bundle/
-fitnessapp_ios/.eslintrc.js
-fitnessapp_ios/.gitignore
-fitnessapp_ios/.prettierrc.js
-fitnessapp_ios/.watchmanconfig
-fitnessapp_ios/Gemfile.lock
-fitnessapp_ios/android/app/debug.keystore
-fitnessapp_ios/android/app/src/debug/
-fitnessapp_ios/android/app/src/main/AndroidManifest.xml
-fitnessapp_ios/android/app/src/main/java/com/fitnessapp_ios/
-fitnessapp_ios/android/app/src/main/res/drawable/
-fitnessapp_ios/android/app/src/main/res/mipmap-hdpi/
-fitnessapp_ios/android/app/src/main/res/mipmap-mdpi/
-fitnessapp_ios/android/app/src/main/res/mipmap-xhdpi/
-fitnessapp_ios/android/app/src/main/res/mipmap-xxhdpi/
-fitnessapp_ios/android/app/src/main/res/mipmap-xxxhdpi/
-fitnessapp_ios/android/app/src/main/res/values/
-fitnessapp_ios/android/build.gradle
-fitnessapp_ios/android/gradle.properties
-fitnessapp_ios/android/gradle/wrapper/
-fitnessapp_ios/android/gradlew
-fitnessapp_ios/android/gradlew.bat
-fitnessapp_ios/android/settings.gradle
-fitnessapp_ios/ios/.xcode.env
-fitnessapp_ios/ios/Podfile.lock
-fitnessapp_ios/ios/fitnessapp_ios.xcodeproj/project.pbxproj
-fitnessapp_ios/ios/fitnessapp_ios.xcodeproj/xcshareddata/xcschemes/
-fitnessapp_ios/ios/fitnessapp_ios.xcworkspace/contents.xcworkspacedata
-fitnessapp_ios/ios/fitnessapp_ios.xcworkspace/xcshareddata/
-fitnessapp_ios/ios/fitnessapp_ios/AppDelegate.h
-fitnessapp_ios/ios/fitnessapp_ios/AppDelegate.mm
-fitnessapp_ios/ios/fitnessapp_ios/Images.xcassets/
-fitnessapp_ios/ios/fitnessapp_ios/Info.plist
-fitnessapp_ios/ios/fitnessapp_ios/LaunchScreen.storyboard
-fitnessapp_ios/ios/fitnessapp_ios/PrivacyInfo.xcprivacy
-fitnessapp_ios/ios/fitnessapp_ios/main.m
-fitnessapp_ios/ios/fitnessapp_iosTests/Info.plist
-fitnessapp_ios/ios/fitnessapp_iosTests/fitnessapp_iosTests.m
 fitnessapp_ios/jest.config.js
 fitnessapp_ios/metro.config.js
 fitnessapp_ios/package-lock.json
 fitnessapp_ios/tsconfig.json
+
+**/GoogleService-Info.plist

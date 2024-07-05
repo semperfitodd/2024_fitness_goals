@@ -1,5 +1,6 @@
 module "api_gateway" {
   source = "terraform-aws-modules/apigateway-v2/aws"
+  version = "3.1.1"
 
   name          = local.environment
   description   = "API Gateway for ${local.environment} environment"

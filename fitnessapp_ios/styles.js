@@ -137,6 +137,29 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 4,
   },
+  legendContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  legendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 5,
+  },
+  legendColor: {
+    width: 10,
+    height: 10,
+    marginRight: 5,
+  },
+  legendLabel: {
+    fontSize: 12,
+    color: '#2c3e50',
+  },
+  signInButtonContainer: {
+    marginTop: 20,
+    alignItems: 'center',
+  },
 });
 
 export default styles;

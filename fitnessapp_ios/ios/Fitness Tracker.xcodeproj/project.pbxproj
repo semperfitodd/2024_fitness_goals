@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5F234C882C38483B00E8FCE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F234C872C38483B00E8FCE9 /* GoogleService-Info.plist */; };
 		7699B88040F8A987B510C191 /* libPods-fitnessapp_ios-fitnessapp_iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-fitnessapp_ios-fitnessapp_iosTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E406CA667E52384495EFC4B8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C31D7D406826215A3B564178 /* PrivacyInfo.xcprivacy */; };
@@ -28,10 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* fitnessapp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fitnessapp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* Fitness TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* fitnessapp_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fitnessapp_iosTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* fitnessapp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessapp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Fitness Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = fitnessapp_ios/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = fitnessapp_ios/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = fitnessapp_ios/Images.xcassets; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-fitnessapp_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitnessapp_ios.release.xcconfig"; path = "Target Support Files/Pods-fitnessapp_ios/Pods-fitnessapp_ios.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-fitnessapp_ios-fitnessapp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitnessapp_ios-fitnessapp_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-fitnessapp_ios-fitnessapp_iosTests/Pods-fitnessapp_ios-fitnessapp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-fitnessapp_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fitnessapp_ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F234C872C38483B00E8FCE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = fitnessapp_ios/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-fitnessapp_ios-fitnessapp_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitnessapp_ios-fitnessapp_iosTests.release.xcconfig"; path = "Target Support Files/Pods-fitnessapp_ios-fitnessapp_iosTests/Pods-fitnessapp_ios-fitnessapp_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C31D7D406826215A3B564178 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = fitnessapp_ios/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -86,9 +88,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* fitnessapp_ios */ = {
+		13B07FAE1A68108700A75B9A /* Fitness Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				5F234C872C38483B00E8FCE9 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -98,7 +101,7 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				C31D7D406826215A3B564178 /* PrivacyInfo.xcprivacy */,
 			);
-			name = fitnessapp_ios;
+			name = "Fitness Tracker";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -121,7 +124,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* fitnessapp_ios */,
+				13B07FAE1A68108700A75B9A /* Fitness Tracker */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* fitnessapp_iosTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -136,8 +139,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* fitnessapp_ios.app */,
-				00E356EE1AD99517003FC87E /* fitnessapp_iosTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Fitness Tracker.app */,
+				00E356EE1AD99517003FC87E /* Fitness TrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* fitnessapp_iosTests */ = {
+		00E356ED1AD99517003FC87E /* Fitness TrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "fitnessapp_iosTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Fitness TrackerTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -172,14 +175,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = fitnessapp_iosTests;
+			name = "Fitness TrackerTests";
 			productName = fitnessapp_iosTests;
-			productReference = 00E356EE1AD99517003FC87E /* fitnessapp_iosTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* Fitness TrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* fitnessapp_ios */ = {
+		13B07F861A680F5B00A75B9A /* Fitness Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "fitnessapp_ios" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Fitness Tracker" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -193,9 +196,9 @@
 			);
 			dependencies = (
 			);
-			name = fitnessapp_ios;
+			name = "Fitness Tracker";
 			productName = fitnessapp_ios;
-			productReference = 13B07F961A680F5B00A75B9A /* fitnessapp_ios.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Fitness Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "fitnessapp_ios" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Fitness Tracker" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,8 +231,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* fitnessapp_ios */,
-				00E356ED1AD99517003FC87E /* fitnessapp_iosTests */,
+				13B07F861A680F5B00A75B9A /* Fitness Tracker */,
+				00E356ED1AD99517003FC87E /* Fitness TrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +251,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5F234C882C38483B00E8FCE9 /* GoogleService-Info.plist in Resources */,
 				E406CA667E52384495EFC4B8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +412,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* fitnessapp_ios */;
+			target = 13B07F861A680F5B00A75B9A /* Fitness Tracker */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -437,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fitnessapp_ios.app/fitnessapp_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitness Tracker.app/Fitness Tracker";
 			};
 			name = Debug;
 		};
@@ -461,7 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fitnessapp_ios.app/fitnessapp_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitness Tracker.app/Fitness Tracker";
 			};
 			name = Release;
 		};
@@ -476,6 +480,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = fitnessapp_ios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Todd's 2024 Fitness Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,8 +492,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = fitnessapp_ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bernsonfamily.fitnessapp;
+				PRODUCT_NAME = "Fitness Tracker";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -509,6 +514,7 @@
 				DEVELOPMENT_TEAM = 3N7C4993B3;
 				INFOPLIST_FILE = fitnessapp_ios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Todd's 2024 Fitness Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,8 +526,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = fitnessapp_ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bernsonfamily.fitnessapp;
+				PRODUCT_NAME = "Fitness Tracker";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -687,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "fitnessapp_iosTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Fitness TrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -696,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "fitnessapp_ios" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Fitness Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -705,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "fitnessapp_ios" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Fitness Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
