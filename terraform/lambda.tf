@@ -1,5 +1,6 @@
 module "lambda_function_totals" {
   source = "terraform-aws-modules/lambda/aws"
+  version = "6.8.0"
 
   function_name = "${local.environment}_get_function"
   description   = "${local.environment} function to get data from DynamoDB"
@@ -54,6 +55,7 @@ module "lambda_function_totals" {
 
 module "lambda_function_insert" {
   source = "terraform-aws-modules/lambda/aws"
+  version = "6.8.0"
 
   function_name = "${local.environment}_insert_function"
   description   = "${local.environment} function to record data to DynamoDB"

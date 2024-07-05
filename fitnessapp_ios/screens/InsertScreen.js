@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, Button, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import * as Keychain from 'react-native-keychain';
+import styles from '../styles';
 import { useNavigation } from '@react-navigation/native';
-import styles from '../styles'; // Import styles from styles.js
 
 const API_ENDPOINT = 'https://fitness.bernsonfamily.net/insert';
 
@@ -20,11 +21,14 @@ const InsertScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    setExerciseData((exerciseData) => ({
-      ...exerciseData,
-      date: new Date(),
-    }));
-  }, []);
+    const checkIfSignedIn = async () => {
+      const token = await Keychain.getGenericPassword();
+      if (!token) {
+        navigation.replace('SignIn');
+      }
+    };
+    checkIfSignedIn();
+  }, [navigation]);
 
   const handleInputChange = (name, value) => {
     setExerciseData({ ...exerciseData, [name]: value });
@@ -37,7 +41,7 @@ const InsertScreen = () => {
 
       if (response.status === 200) {
         Alert.alert('Success', 'Record successfully inserted!', [
-          { text: 'OK', onPress: () => navigation.navigate('Home') },
+          { text: 'OK', onPress: () => navigation.navigate('Progress') },
         ]);
       } else {
         Alert.alert('Error', 'Failed to insert record.');

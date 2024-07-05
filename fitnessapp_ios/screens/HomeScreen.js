@@ -9,10 +9,6 @@ const HomeScreen = ({ navigation }) => {
         title="Progress"
         onPress={() => navigation.navigate('Progress')}
       />
-      <Button
-        title="Insert"
-        onPress={() => navigation.navigate('Insert')}
-      />
     </View>
   );
 };
