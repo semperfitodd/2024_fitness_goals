@@ -9,7 +9,7 @@ all the necessary code and infrastructure setup for tracking these fitness activ
 The system architecture is built using Terraform for infrastructure provisioning. It includes a React frontend hosted on
 AWS S3 and CloudFront, with a backend API built using AWS Lambda and API Gateway, interfacing with a DynamoDB database.
 ![2024_fitness_goals_architecture.png](images%2F2024_fitness_goals_architecture.png)
-**Flow:** User (me) > CloudFront/S3 > API Gateway > Lambda > DynamoDB > back to me
+**Flow:** `User (me) > CloudFront/S3 > API Gateway > Lambda > DynamoDB > back to me
 
 ## Features
 * **Daily Tracking:** Track daily pull-ups, push-ups, squats, and HSPU.
